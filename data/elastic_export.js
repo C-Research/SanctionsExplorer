@@ -1,7 +1,10 @@
+//const ES_HOST_URL = 'https://vpc-sanctionsexplorer-ke72gfnazukxqdnjfw6eltj2c4.us-east-1.es.amazonaws.com';
+const ES_HOST_URL = 'http://localhost:9200';
 const path = require('path');
 const es = require('elasticsearch');
 const client = new es.Client({
-    host: 'localhost:9200',
+    host: ES_HOST_URL,
+    requestTimeout:300000
 });
 const util = require(path.join(__dirname, 'util.js'));
 const log = util.log('es_export');

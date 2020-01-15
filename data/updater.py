@@ -77,7 +77,7 @@ def download_and_parse(url, xml, json):
         quit()
 
 
-print(f'{datetime.now()}: Beginning the update process...')
+print(datetime.now(),': Beginning the update process...')
 feed = feedparser.parse(RSS_FEED_URL)
 serialize_feed(feed, NEW_RSS_FILE)
 

@@ -1,9 +1,9 @@
 import json
 import sentry_sdk
 import logging
-import credentials
+from credentials import credentials
 
-sentry_sdk.init(credentials.sentry)
+sentry_sdk.init(credentials.load("sentry"))
 
 
 def write_json(outfile, data):
@@ -22,7 +22,7 @@ def read_json(outfile):
 
 
 def log(owner):
-    owner_tag = f'<{owner}>'
+    owner_tag = '<'+owner+'>'
 
     logger = logging.getLogger(owner_tag)
     logger.setLevel(logging.INFO)
